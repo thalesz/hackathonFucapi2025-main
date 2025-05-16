@@ -1,0 +1,70 @@
+/* Estilos básicos para um layout de página com cards */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 24px;
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #2d3748;
+}
+
+.card-content {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 16px;
+}
+
+.card-action {
+    margin-top: auto;
+}
+
+.card-action button,
+.card-action a {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.card-action button:hover,
+.card-action a:hover {
+    background: #1e40af;
+}
