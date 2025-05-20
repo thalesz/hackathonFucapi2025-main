@@ -43,7 +43,7 @@ const NovaColetaForm: React.FC = () => {
     const fetchMoradores = async () => {
       if (condominio !== '') {
         try {
-          setLoading(true);
+          // setLoading(true);
           const res = await fetch(`https://hackaton-ezbbbegfggfxahd4.brazilsouth-01.azurewebsites.net/api/v1/morador/${condominio}`);
           const data = await res.json();
           setMoradores(data.data || []);
@@ -100,7 +100,7 @@ const NovaColetaForm: React.FC = () => {
     setRespostaColeta([]);
   };
 
-  const handleVoltar = () => navigate('/');
+  const handleVoltar = () => navigate('/cards');
 
   return (
     <div style={containerStyle}>
@@ -121,7 +121,9 @@ const NovaColetaForm: React.FC = () => {
         </div>
 
         {loading ? (
-          <Spinner />
+          <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px' }}>
+            <Spinner />
+          </div>        
         ) : cadastroFinalizado ? (
           <>
             <h2 style={{ fontSize: '1.8rem', color: '#27ae60' }}>Cadastro realizado com sucesso !</h2>
@@ -221,11 +223,13 @@ const cardStyle: React.CSSProperties = {
   boxShadow: '0 8px 24px rgba(39, 174, 96, 0.15)',
   width: '100%',
   maxWidth: '500px',
+  minHeight: '600px', // altura mínima fixa (ajuste conforme necessário)
   display: 'flex',
   flexDirection: 'column',
   gap: '1.2rem',
   textAlign: 'center',
   border: '2px solid #27ae60',
+  justifyContent: 'center', // centraliza conteúdo verticalmente
 };
 
 const ecoBannerStyle: React.CSSProperties = {

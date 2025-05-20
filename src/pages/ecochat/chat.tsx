@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ecoColors = {
     primary: '#388e3c',
@@ -26,7 +27,8 @@ const Chat: React.FC = () => {
     const messagesEndRef = useRef<HTMLDivElement | null>(null);
     const [image, setImage] = useState<string | null>(null);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
-
+    const navigate = useNavigate();
+    
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages, loading]);
@@ -121,7 +123,8 @@ const Chat: React.FC = () => {
     };
 
     const handleBack = () => {
-        window.history.back();
+        navigate('/cards');
+
     };
 
     return (

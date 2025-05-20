@@ -108,7 +108,7 @@ const NovaColetaForm2: React.FC = () => {
     };
 
     const handleVoltar = () => {
-        navigate('/');
+        navigate('/cards');
     };
 
     return (
